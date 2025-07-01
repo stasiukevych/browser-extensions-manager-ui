@@ -78,13 +78,13 @@ statusFilterToggles.forEach(button => {
           const activeFilter = document.querySelector('button[state="active"]');
           const filterType = activeFilter.getAttribute('filter-type');
 
-          if (!isPressed) {
+          if (!isPressed && "all" !== filterType) {
                if ("active" !== filterType) {
                     button.closest('.extension').classList.toggle('visually-hidden', true);
                }
           }
 
-          if (isPressed) {
+          if (isPressed && "all" !== filterType) {
                if ("inactive" !== filterType) {
                     button.closest('.extension').classList.toggle('visually-hidden', true);
                }
