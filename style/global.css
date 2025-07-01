@@ -1,0 +1,209 @@
+:root {
+     /* -- colors -- */
+     /* set up possible color schemes */
+     color-scheme: light dark;
+
+     --color-neutral-0: rgb(251, 253, 254);
+     --color-neutral-100: rgb(238, 238, 238);
+     --color-neutral-200: rgb(214, 226, 245);
+     --color-neutral-300: rgb(198, 198, 198);
+     --color-neutral-600: rgb(83, 88, 104);
+     --color-neutral-700: rgb(47, 54, 75);
+     --color-neutral-800: rgb(32, 37, 53);
+     --color-neutral-900: rgb(9, 21, 64);
+
+     --color-red-400: rgb(242, 92, 84);
+     --color-red-500: rgb(222, 72, 64);
+     --color-red-700: rgb(199, 35, 26);
+
+     /* -- gradients -- */
+     --dark-gradient: linear-gradient(180deg, #04091B 0%, #091540 100%);
+     --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEFBF9 100%);
+
+     /* -- font families -- */
+     --ff-main: 'Noto Sans', sans-serif;
+
+     /* -- font sizes --*/
+     --fs-100: 1rem;
+     --fs-200: 1.25rem;
+     --fs-300: 2.125rem;
+
+     /* -- font weights -- */
+     --fw-400: 400;
+     --fw-500: 500;
+     --fw-700: 700;
+
+     /* -- letter spacing -- */
+     --ls-100: -0.2px;
+     --ls-200: -0.3px;
+     --ls-300: -0.5px;
+     --ls-400: -1px;
+
+     /* -- line heights */
+     --lh-100: 1;
+     --lh-200: 1.2;
+     --lh-300: 1.4;
+
+     /* -- radiuses -- */
+     --radius-4: 4px;
+     --radius-6: 6px;
+     --radius-8: 8px;
+     --radius-10: 10px;
+     --radius-12: 12px;
+     --radius-16: 16px;
+     --radius-20: 20px;
+     --radius-24: 24px;
+     --radius-full: 999px;
+
+     /* -- shadows -- */
+     --header-shadow: 0px 2px 3px #D9E5F4;
+     --button-shadow: 0px 1px 2px rgb(184, 196, 215, .4);
+     --extension-shadow: 0px 2px 2px 0px rgb(194, 206, 225, .2), 0px 1px 5px 1px rgb(194, 206, 225, .22);
+     --status-toggle-shadow: 0px 0px 0px 2px light-dark(var(--color-neutral-0), var(--color-neutral-900)), 0px 0px 0px 4px var(--color-red-400);
+}
+
+:root:has([theme="☀️"]) {
+     color-scheme: light;
+     --root-background-gradient: var(--light-gradient);
+     --button-border: 1px solid var(--color-neutral-200);
+}
+
+:root:has([theme="🌑"]) {
+     color-scheme: dark;
+     --header-shadow: none;
+     --button-shadow: none;
+     --extension-shadow: none;
+     --root-background-gradient: var(--dark-gradient);
+     --button-border: 1px solid var(--color-neutral-600);
+}
+
+html {
+     font-family: var(--ff-main);
+     background: var(--root-background-gradient);
+}
+
+body {
+     margin-inline: auto;
+     max-width: 23.4375em;
+
+     padding-inline: 1em;
+     padding-block: 1.25em 4em;
+
+     @media (min-width: 48em) {
+          max-width: 48em;
+          padding-inline: 2em;
+          padding-block: 1.5em 4em;
+     }
+
+     @media (min-width: 90em) {
+          max-width: 79.125em;
+          padding-inline: 3em;
+          padding-block: 2.5em 4em;
+     }
+}
+
+header {
+     display: flex;
+     justify-content: space-between;
+
+     padding-block: .5em;
+     padding-inline: .75em;
+
+     border-radius: var(--radius-10);
+     box-shadow: var(--header-shadow);
+     background-color: light-dark(var(--color-neutral-0), var(--color-neutral-800));
+
+     @media (min-width: 48em) {
+          padding-inline: 1em;
+          padding-block: .75em;
+     }
+}
+
+h1 {
+     font-size: var(--fs-300);
+     font-weight: var(--fw-700);
+     line-height: var(--lh-200);
+     letter-spacing: var(--ls-400);
+     color: light-dark(var(--color-neutral-900), var(--color-neutral-0));
+}
+
+h2 {
+     font-size: var(--fs-200);
+     font-weight: var(--fw-700);
+     line-height: var(--lh-200);
+     letter-spacing: var(--ls-100);
+     color: light-dark(var(--color-neutral-900), var(--color-neutral-0));
+}
+
+p {
+     font-size: var(--fs-100);
+     font-weight: var(--fw-400);
+     line-height: var(--lh-300);
+     letter-spacing: var(--ls-300);
+     color: light-dark(var(--color-neutral-600), var(--color-neutral-300));
+}
+
+button {
+     outline: none;
+     padding: .5em 1.25em;
+     border: var(--button-border);
+     border-radius: var(--radius-full);
+
+     box-shadow: var(--button-shadow);
+     color: light-dark(var(--color-neutral-900), var(--color-neutral-0));
+     background-color: light-dark(var(--color-neutral-0), var(--color-neutral-700));
+
+     font-family: var(--ff-main);
+     font-size: var(--fs-200);
+     font-weight: var(--fw-400);
+     line-height: var(--lh-300);
+     letter-spacing: var(--ls-200);
+
+     cursor: pointer;
+}
+
+button[data-type="remove"] {
+     --button-shadow: none;
+     font-size: var(--fs-100);
+     font-weight: var(--fw-500);
+     line-height: var(--lh-300);
+     letter-spacing: var(--ls-300);
+     padding: .4em 1em;
+}
+
+button:not([state="active"]):hover {
+     background-color: light-dark(var(--color-neutral-0), var(--color-neutral-600));
+}
+
+body[theme="☀️"] button:not([state="active"]):hover {
+     opacity: .7;
+}
+
+button[data-type="remove"]:hover {
+     color: light-dark(var(--color-neutral-0), var(--color-neutral-900));
+     background-color: light-dark(var(--color-red-700), var(--color-red-400));
+     --button-border: 1px solid light-dark(var(--color-red-700), var(--color-red-400));
+}
+
+button:not([state="active"]):focus-visible {
+     outline: none;
+     box-shadow:
+          0px 0px 0px 2px light-dark(var(--color-neutral-200), var(--color-neutral-900)), 0px 0px 0px 4px var(--color-red-400);
+}
+
+button[state="active"] {
+     --button-border: none;
+     --button-shadow: none;
+     color: light-dark(var(--color-neutral-0), var(--color-neutral-900));
+     background-color: light-dark(var(--color-red-700), var(--color-red-400));
+}
+
+button[state="active"]:hover {
+     opacity: 1;
+     background-color: var(--color-red-500);
+}
+
+button[state="active"]:focus-visible {
+     outline: none;
+     box-shadow: 0px 0px 0px 2px light-dark(var(--color-neutral-0), var(--color-neutral-900)), 0px 0px 0px 4px var(--color-red-400);
+}

@@ -1,0 +1,161 @@
+@layer reset, fonts, global, header, status, extensions;
+
+@import url('reset.css') layer(reset);
+@import url('fonts.css') layer(fonts);
+@import url('global.css') layer(global);
+
+@layer header {
+     .logo {
+          align-self: center;
+     }
+
+     .logo:focus-visible {
+          outline: none;
+     }
+
+     .theme-switcher {
+          padding: 1em;
+          border-radius: var(--radius-12);
+          background-color: light-dark(var(--color-neutral-100), var(--color-neutral-700));
+          transition: all .3s ease-in-out;
+     }
+
+     .theme-switcher:hover {
+          cursor: pointer;
+          background-color: light-dark(var(--color-neutral-300), var(--color-neutral-600));
+     }
+
+     .theme-switcher:focus-visible {
+          outline: none;
+          box-shadow:
+               0px 0px 0px 2px light-dark(var(--color-neutral-0), var(--color-neutral-800)),
+               0px 0px 0px 4px var(--color-red-400);
+     }
+}
+
+@layer status {
+     .status-filter {
+          padding-block: 2.5em;
+
+          gap: 1.5em;
+          display: flex;
+          flex-direction: column;
+
+          align-items: center;
+          justify-content: center;
+
+          @media (min-width: 48em) {
+               flex-direction: row;
+               justify-content: space-between;
+          }
+     }
+
+     .status-filter__buttons {
+          gap: .75em;
+          display: flex;
+     }
+}
+
+@layer extensions {
+
+     /* need to organize all extensions */
+     .extensions {
+          gap: .75em;
+          display: grid;
+
+          @media (min-width: 48em) {
+               grid-template-columns: 1fr 1fr;
+          }
+
+          @media (min-width: 90em) {
+               grid-template-columns: 1fr 1fr 1fr;
+          }
+     }
+
+     .extension {
+          padding: 1.25em;
+          max-height: 12.5em;
+
+          gap: 1.5em;
+          display: flex;
+          flex-direction: column;
+
+          border-radius: var(--radius-20);
+          box-shadow: var(--extension-shadow);
+          background-color: light-dark(var(--color-neutral-0), var(--color-neutral-800));
+          border: 1px solid light-dark(var(--color-neutral-200), var(--color-neutral-600));
+
+          overflow: clip;
+     }
+
+     .extension__info {
+          gap: 1em;
+          display: flex;
+          align-items: start;
+     }
+
+     .extension__text>*:not(:first-child) {
+          margin-top: .4rem;
+     }
+
+     .extension__actions {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+     }
+
+     .status-toggle {
+          padding: 0;
+          position: relative;
+          width: 2.25rem;
+          height: 1.25rem;
+          border: none;
+          border-radius: var(--radius-full);
+          background-color: light-dark(var(--color-neutral-300), var(--color-neutral-600));
+
+          cursor: pointer;
+          transition: background-color 0.3s;
+     }
+
+     .status-toggle__slider {
+          position: absolute;
+          height: 1rem;
+          width: 1rem;
+          left: .125rem;
+          top: .125rem;
+          background-color: var(--color-neutral-0);
+          border-radius: 50%;
+          transition: transform 0.3s;
+     }
+
+     .status-toggle[aria-pressed="true"] {
+          background-color: light-dark(var(--color-red-700), var(--color-red-400));
+     }
+
+     .status-toggle[aria-pressed="true"] .status-toggle__slider {
+          transform: translateX(1rem);
+     }
+
+     .status-toggle:hover {
+          opacity: 1;
+          background-color: light-dark(var(--color-neutral-300), var(--color-neutral-600));
+     }
+
+     .status-toggle[aria-pressed="true"]:hover {
+          background-color: var(--color-red-500);
+     }
+
+     .status-toggle:focus-visible {
+          box-shadow: 0px 0px 0px 2px light-dark(var(--color-neutral-0), var(--color-neutral-800)), 0px 0px 0px 4px var(--color-red-400);
+     }
+
+     .visually-hidden {
+          clip: rect(0 0 0 0);
+          clip-path: inset(50%);
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
+     }
+}

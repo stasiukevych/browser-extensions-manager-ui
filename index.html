@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body theme="☀️">
+
+  <header>
+    <a class="logo" href="#">
+      <img src="assets/images/logo-dark.svg" alt="Extensions Logo">
+    </a>
+    <a class="theme-switcher" href="#">
+      <img class="theme-switcher__icon" src="assets/images/icon-moon.svg" alt="Switcher Logo">
+    </a>
+  </header>
+
+  <section class="status-filter">
+    <h1>Extensions List</h1>
+    <div class="status-filter__buttons">
+      <button filter-type="all" state="active">All</button>
+      <button filter-type="active">Active</button>
+      <button filter-type="inactive">Inactive</button>
+    </div>
+  </section>
+
+  <section class="extensions">
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-devlens.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>DevLens</h2>
+          <p>Quickly inspect page layouts and visualize element boundaries.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-style-spy.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>StyleSpy</h2>
+          <p>Instantly analyze and copy CSS from any webpage element.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-speed-boost.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>SpeedBoost</h2>
+          <p>Optimizes browser resource usage to accelerate page loading.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-json-wizard.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>JSONWizard</h2>
+          <p>Formats, validates, and prettifies JSON responses in-browser.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-tab-master-pro.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>TabMaster Pro</h2>
+          <p>Organizes browser tabs into groups and sessions.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-viewport-buddy.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>ViewportBuddy</h2>
+          <p>Simulates various screen resolutions directly within the browser.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-markup-notes.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>Markup Notes</h2>
+          <p>Enables annotation and notes directly onto webpages for collaborative debugging.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-grid-guides.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>GridGuides</h2>
+          <p>Overlay customizable grids and alignment guides on any webpage.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-palette-picker.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>Palette Picker</h2>
+          <p>Instantly extracts color palettes from any webpage.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-link-checker.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>LinkChecker</h2>
+          <p>Scans and highlights broken links on any page.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-dom-snapshot.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>DOM Snapshot</h2>
+          <p>Capture and export DOM structures quickly.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+    <article class="extension">
+      <div class="extension__info">
+        <img src="assets/images/logo-console-plus.svg" alt="DevLens Logo">
+        <div class="extension__text">
+          <h2>ConsolePlus</h2>
+          <p>Enhanced developer console with advanced filtering and logging.</p>
+        </div>
+      </div>
+      <div class="extension__actions">
+        <button data-type="remove">Remove</button>
+        <button class="status-toggle" aria-pressed="false" aria-label="Active/Inactive">
+          <span class="status-toggle__slider"></span>
+        </button>
+      </div>
+    </article>
+
+  </section>
+
+  <script src="index.js" defer></script>
+</body>
+
+</html>
